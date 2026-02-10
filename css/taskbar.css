@@ -14,17 +14,38 @@
   font-family: var(--font-family);
 }
 
+.taskbar__left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.taskbar__logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
 .taskbar__active-file {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   color: var(--color-taskbar-text);
+  background-color: #FFF0CF;
+  border: 2px solid rgba(192, 57, 43, 0.7);
+  padding: 4px 16px;
+}
+
+.taskbar__active-file:empty {
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .taskbar__clock {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   color: var(--color-taskbar-text);
-  background-color: #fff;
+  background-color: #FFF0CF;
   border: 2px solid #c0392b;
-  padding: 4px 12px;
+  padding: 4px 16px;
 }
