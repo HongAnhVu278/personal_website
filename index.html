@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anh's Desktop</title>
+
+  <!-- font: IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/background.css" />
+  <link rel="stylesheet" href="css/icon.css" />
+  <link rel="stylesheet" href="css/window.css" />
+  <link rel="stylesheet" href="css/taskbar.css" />
+</head>
+<body>
+  <!-- layer 1: etch-a-sketch background grid -->
+  <div id="background" class="layer layer--background"></div>
+
+  <!-- layer 2: desktop icons -->
+  <div id="desktop" class="layer layer--desktop">
+   
+  </div>
+
+  <!-- layer 3: window layer -->
+  <div id="windows" class="layer layer--windows">
+    
+  </div>
+
+  <!-- layer 4: bottom taskbar -->
+  <footer id="taskbar" class="taskbar">
+    <span class="taskbar__active-file"></span>
+    <span class="taskbar__clock"></span>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

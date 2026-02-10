@@ -1,0 +1,12 @@
+/* etch-a-sketch grid */
+.layer--background {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--cell-size));
+  grid-template-rows: repeat(auto-fill, var(--cell-size));
+}
+
+.bg-cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 0.5px solid var(--color-grid-line);
+}

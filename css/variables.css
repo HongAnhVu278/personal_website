@@ -1,0 +1,39 @@
+:root {
+  /* typo */
+  --font-family: 'IBM Plex Mono', monospace;
+  --font-size-base: 14px;
+  --font-size-sm: 12px;
+  --font-size-lg: 16px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* colors */
+  --color-bg: #CFE4C5;
+  --color-grid-line: #b6d8ad;
+  --color-grid-hover: #6B4E6E;
+  --color-window-title-bg: #7ec8e3;
+  --color-window-body-bg: #f5f5f5;
+  --color-window-border: #5ba3c9;
+  --color-taskbar-bg: #FFE19A;
+  --color-taskbar-text: #333;
+  --color-icon-label: #333;
+  --color-text: #333;
+
+  /* z-index layers */
+  --z-background: 0;
+  --z-desktop: 10;
+  --z-windows: 20;
+  --z-taskbar: 30;
+
+  /* spacing */
+  --taskbar-height: 48px;
+  --icon-size: 72px;
+  --cell-size: 24px;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+}

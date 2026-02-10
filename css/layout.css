@@ -1,0 +1,28 @@
+/* positioned to fill the viewport */
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - var(--taskbar-height));
+}
+
+/* background: lowest layer, receives all mouse events by default */
+.layer--background {
+  z-index: var(--z-background);
+  background-color: var(--color-bg);
+}
+
+/*
+  desktop & window: wrappers are pointer-events:none so mouse events
+  pass through to the background grid underneath
+*/
+.layer--desktop {
+  z-index: var(--z-desktop);
+  pointer-events: none;
+}
+
+.layer--windows {
+  z-index: var(--z-windows);
+  pointer-events: none;
+}

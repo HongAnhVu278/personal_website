@@ -1,0 +1,30 @@
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--taskbar-height);
+  z-index: var(--z-taskbar);
+  background-color: var(--color-taskbar-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-top: 2px solid #e0c08a;
+  font-family: var(--font-family);
+}
+
+.taskbar__active-file {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-taskbar-text);
+}
+
+.taskbar__clock {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-taskbar-text);
+  background-color: #fff;
+  border: 2px solid #c0392b;
+  padding: 4px 12px;
+}
