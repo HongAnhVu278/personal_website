@@ -6,8 +6,9 @@
   border: 3px solid var(--color-window-border);
   border-radius: 4px;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.12);
-  min-width: 360px;
-  max-width: 700px;
+  width: 52vw;
+  min-width: 400px;
+  max-width: 750px;
   font-family: var(--font-family);
 }
 
@@ -71,7 +72,7 @@
   background-color: var(--color-window-body-bg);
   padding: 20px 24px;
   overflow-y: auto;
-  max-height: 400px;
+  max-height: 450px;
   font-size: var(--font-size-base);
   white-space: pre-wrap;
   font-family: var(--font-family);

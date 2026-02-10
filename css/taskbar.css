@@ -33,6 +33,7 @@
   background-color: #FFF0CF;
   border: 2px solid rgba(192, 57, 43, 0.7);
   padding: 4px 16px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
 }
 
 .taskbar__active-file:empty {
@@ -48,4 +49,5 @@
   background-color: #FFF0CF;
   border: 2px solid #c0392b;
   padding: 4px 16px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
 }
