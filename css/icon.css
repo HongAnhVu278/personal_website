@@ -1,3 +1,21 @@
+
+.layer--desktop {
+  display: grid;
+  grid-template-columns: 160px 1fr 160px;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "readme     .  contact"
+    "projects   .  ."
+    "experience .  ."
+    "writing    .  .";
+  padding: 20px 60px;
+  gap: 8px;
+}
+
+.desktop-icon[data-id="contact"] {
+  justify-self: end;
+}
+
 .desktop-icon {
   pointer-events: auto;
   display: flex;
@@ -5,10 +23,10 @@
   align-items: center;
   gap: 4px;
   cursor: pointer;
-  width: calc(var(--icon-size) + 40px);
   padding: 8px;
   user-select: none;
   text-align: center;
+  width: fit-content;
 }
 
 .desktop-icon:hover {
