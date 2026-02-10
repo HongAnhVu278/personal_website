@@ -25,7 +25,7 @@ export function createDesktopIcon({ id, label, icon, position, interactive }) {
     el,
     onClick(callback) {
       if (interactive) {
-        el.addEventListener('dblclick', () => callback(id));
+        el.addEventListener('click', () => callback(id));
       }
     },
   };
