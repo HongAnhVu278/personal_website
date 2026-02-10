@@ -1,4 +1,4 @@
-// main.js — Application entry point
-// Components will be wired here in subsequent steps.
+import { createBackground } from './components/Background.js';
 
-console.log('Desktop loaded.');
+const backgroundEl = document.getElementById('background');
+createBackground(backgroundEl);
