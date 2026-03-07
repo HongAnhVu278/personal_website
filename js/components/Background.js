@@ -19,8 +19,10 @@ export function createBackground(containerEl) {
   function build() {
     containerEl.innerHTML = '';
 
-    const cols = Math.ceil(containerEl.clientWidth / cellSize);
-    const rows = Math.ceil(containerEl.clientHeight / cellSize);
+    const cols = Math.ceil(containerEl.clientWidth / cellSize) + 1;
+    const rows = Math.ceil(containerEl.clientHeight / cellSize) + 1;
+
+    containerEl.style.gridTemplateColumns = `repeat(${cols}, var(--cell-size))`;
     const total = cols * rows;
 
     const fragment = document.createDocumentFragment();

@@ -3,8 +3,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: calc(100% - var(--taskbar-height));
+  width: 100vw;
+  height: calc(100vh - var(--taskbar-height));
 }
 
 /* background: lowest layer, receives all mouse events by default */

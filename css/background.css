@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, var(--cell-size));
   grid-template-rows: repeat(auto-fill, var(--cell-size));
+  overflow: hidden;
 }
 
 .bg-cell {
