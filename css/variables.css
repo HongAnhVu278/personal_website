@@ -15,6 +15,8 @@
   --color-window-title-bg: #7ec8e3;
   --color-window-body-bg: #f5f5f5;
   --color-window-border: #5ba3c9;
+  --color-window-title-bg-yellow: #FFD966;
+  --color-window-border-yellow: #C9A227;
   --color-taskbar-bg: #FFE19A;
   --color-taskbar-text: #333;
   --color-icon-label: #333;
@@ -30,10 +32,13 @@
   --taskbar-height: 64px;
   --icon-size: 72px;
   --cell-size: 24px;
+  --folder-sidebar-width: 120px;
+  --folder-item-size: 56px;
 }
 
 body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   color: var(--color-text);
+  font-weight: 500; 
 }

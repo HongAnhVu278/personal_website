@@ -1,85 +1,37 @@
-export function createWindow({ title, icon, contentUrl, onOpen, onClose }) {
-  const el = document.createElement('div');
-  el.classList.add('window');
+import { createWindowBase } from '../utils/createWindowBase.js';
 
-  // title bar
-  const titlebar = document.createElement('div');
-  titlebar.classList.add('window__titlebar');
-
-  const titlebarLeft = document.createElement('div');
-  titlebarLeft.classList.add('window__titlebar-left');
-
-  const titleIcon = document.createElement('img');
-  titleIcon.src = icon;
-  titleIcon.alt = title;
-  titleIcon.classList.add('window__titlebar-icon');
-
-  const titleText = document.createElement('span');
-  titleText.classList.add('window__title');
-  titleText.textContent = title;
-
-  titlebarLeft.appendChild(titleIcon);
-  titlebarLeft.appendChild(titleText);
-
-  const closeBtn = document.createElement('button');
-  closeBtn.classList.add('window__close-btn');
-  const closeImg = document.createElement('img');
-  closeImg.src = 'assets/close.png';
-  closeImg.alt = 'Close';
-  closeBtn.appendChild(closeImg);
-
-  titlebar.appendChild(titlebarLeft);
-  titlebar.appendChild(closeBtn);
-
-  // body
-  const body = document.createElement('div');
-  body.classList.add('window__body');
-  body.textContent = 'Loading...';
-
-  el.appendChild(titlebar);
-  el.appendChild(body);
+export function createWindow({ title, icon, contentUrl, onOpen, onClose, theme = 'blue', linkMap }) {
+  const { el, body, open, close } = createWindowBase({ title, icon, theme, onOpen, onClose });
 
   // load content
+  body.textContent = 'Loading...';
   fetch(contentUrl)
     .then((res) => res.text())
-    .then((text) => { body.textContent = text; })
+    .then((text) => {
+      if (linkMap) {
+        body.innerHTML = renderTextWithLinks(text, linkMap);
+      } else {
+        body.textContent = text;
+      }
+    })
     .catch(() => { body.textContent = 'Failed to load content.'; });
 
-  // open / close
-  function open() {
-    el.classList.add('window--open');
-    onOpen?.();
-  }
-
-  function close() {
-    el.classList.remove('window--open');
-    onClose?.();
-  }
-
-  closeBtn.addEventListener('click', close);
-
-  // drag
-  let isDragging = false;
-  let offsetX = 0;
-  let offsetY = 0;
-
-  titlebar.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    offsetX = e.clientX - el.offsetLeft;
-    offsetY = e.clientY - el.offsetTop;
-    titlebar.style.cursor = 'grabbing';
-  });
-
-  document.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    el.style.left = (e.clientX - offsetX) + 'px';
-    el.style.top = (e.clientY - offsetY) + 'px';
-  });
-
-  document.addEventListener('mouseup', () => {
-    isDragging = false;
-    titlebar.style.cursor = 'grab';
-  });
-
   return { el, open, close };
+}
+
+function renderTextWithLinks(text, linkMap) {
+  let safe = text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+
+  for (const { text: phrase, href } of linkMap) {
+    const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    safe = safe.replace(
+      new RegExp(escaped, 'g'),
+      `<a href="${href}" target="_blank" rel="noopener">${phrase}</a>`,
+    );
+  }
+
+  return '<pre style="white-space:pre-wrap;font-family:inherit;margin:0">' + safe + '</pre>';
 }

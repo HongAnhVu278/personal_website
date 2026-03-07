@@ -78,3 +78,40 @@
   font-family: var(--font-family);
   line-height: 1.6;
 }
+
+/* yellow theme modifier */
+.window--yellow {
+  border-color: var(--color-window-border-yellow);
+}
+
+.window--yellow .window__titlebar {
+  background-color: var(--color-window-title-bg-yellow);
+}
+
+/* inline links in text windows */
+.window__body a {
+  color: #2563EB;
+  text-decoration: underline;
+}
+
+.window__body a:hover {
+  opacity: 0.75;
+}
+
+/* titlebar link (e.g. GitHub icon) */
+.window__titlebar-link {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  opacity: 0.75;
+}
+
+.window__titlebar-link:hover {
+  opacity: 1;
+}
+
+.window__titlebar-link img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}

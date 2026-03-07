@@ -36,5 +36,9 @@ export function createTaskbar({ activeFileEl, clockEl }) {
   updateClock();
   setInterval(updateClock, 1000);
 
-  return { setActiveFile, clearActiveFile };
+  function getActiveFile() {
+    return activeFileEl.textContent;
+  }
+
+  return { setActiveFile, clearActiveFile, getActiveFile };
 }
