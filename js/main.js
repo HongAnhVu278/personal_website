@@ -5,6 +5,7 @@ import { createFolderWindow } from './components/FolderWindow.js';
 import { createTaskbar } from './components/Taskbar.js';
 import { desktopItems } from './data/desktopItems.js';
 import { projects } from './data/projects.js';
+import { experiences } from './data/experiences.js';
 
 // background
 const backgroundEl = document.getElementById('background');
@@ -96,10 +97,44 @@ const projectsWindow = createFolderWindow({
 });
 mountWindow(projectsWindow, nextPosition());
 
+// experience detail windows (lazy-created on first click)
+const experienceDetailWindows = {};
+
+function openExperienceDetail(item) {
+  if (!experienceDetailWindows[item.id]) {
+    const w = createWindow({
+      title: item.title,
+      icon: 'assets/file.png',
+      contentUrl: item.contentUrl,
+      onOpen: () => taskbar.setActiveFile(item.title),
+      onClose: () => {
+        if (taskbar.getActiveFile() === item.title) taskbar.clearActiveFile();
+      },
+    });
+    mountWindow(w, nextPosition());
+    experienceDetailWindows[item.id] = w;
+  }
+  experienceDetailWindows[item.id].open();
+}
+
+// experience window
+const experienceWindow = createFolderWindow({
+  title: 'Experience',
+  icon: 'assets/folder_blue.png',
+  items: experiences,
+  onOpen: () => taskbar.setActiveFile('Experience'),
+  onClose: () => {
+    if (taskbar.getActiveFile() === 'Experience') taskbar.clearActiveFile();
+  },
+  onItemClick: openExperienceDetail,
+});
+mountWindow(experienceWindow, nextPosition());
+
 // window map for desktop icon clicks
 const windowMap = {
   readme: readmeWindow,
   projects: projectsWindow,
+  experience: experienceWindow,
 };
 
 // desktop icons
