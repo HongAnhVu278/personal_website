@@ -115,3 +115,86 @@
   height: 16px;
   object-fit: contain;
 }
+
+/* folder window body layout */
+.window__body--folder {
+  display: flex;
+  padding: 0;
+  max-height: 460px;
+  white-space: normal;
+}
+
+/* sidebar */
+.folder__sidebar {
+  width: var(--folder-sidebar-width);
+  flex-shrink: 0;
+  border-right: 2px solid var(--color-window-border-yellow);
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: #FFF8E1;
+}
+
+.folder__filter-btn {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  background: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 4px 8px;
+  text-align: left;
+}
+
+.folder__filter-btn:hover,
+.folder__filter-btn--active {
+  background-color: var(--color-window-title-bg-yellow);
+  border-color: var(--color-window-border-yellow);
+}
+
+/* main file grid */
+.folder__main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 16px;
+}
+
+/* file items inside folders */
+.folder-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 80px;
+  cursor: pointer;
+  padding: 6px;
+  text-align: center;
+  user-select: none;
+}
+
+.folder-item:hover {
+  background-color: rgba(255, 217, 102, 0.35);
+  border-radius: 6px;
+}
+
+.folder-item__img {
+  width: var(--folder-item-size);
+  height: var(--folder-item-size);
+  object-fit: contain;
+}
+
+.folder-item__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  word-break: break-word;
+}
+
+.folder-item--hidden {
+  display: none;
+}
