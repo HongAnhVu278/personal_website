@@ -1,0 +1,42 @@
+export const projects = [
+  {
+    id: 'project-1',
+    label: 'Project One.txt',
+    icon: 'assets/file.png',
+    categories: ['Web Dev'],
+    title: 'Project One',
+    contentUrl: 'content/projects/project-1.txt',
+  },
+  {
+    id: 'project-2',
+    label: 'Project Two.txt',
+    icon: 'assets/file.png',
+    categories: ['Creative'],
+    title: 'Project Two',
+    contentUrl: 'content/projects/project-2.txt',
+  },
+  {
+    id: 'project-3',
+    label: 'Project Three.txt',
+    icon: 'assets/file.png',
+    categories: ['Web Dev', 'Creative'],
+    title: 'Project Three',
+    contentUrl: 'content/projects/project-3.txt',
+  },
+  {
+    id: 'project-4',
+    label: 'Project Four.txt',
+    icon: 'assets/file.png',
+    categories: ['Data'],
+    title: 'Project Four',
+    contentUrl: 'content/projects/project-4.txt',
+  },
+  {
+    id: 'project-5',
+    label: 'Project Five.txt',
+    icon: 'assets/file.png',
+    categories: ['Data', 'Web Dev'],
+    title: 'Project Five',
+    contentUrl: 'content/projects/project-5.txt',
+  },
+];

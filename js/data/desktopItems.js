@@ -11,7 +11,7 @@ export const desktopItems = [
     label: 'Projects',
     icon: 'assets/folder_yellow.png',
     position: { gridArea: 'projects' },
-    interactive: false,
+    interactive: true,
   },
   {
     id: 'experience',

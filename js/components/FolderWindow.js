@@ -18,10 +18,14 @@ export function createFolderWindow({
     a.target = '_blank';
     a.rel = 'noopener';
     a.classList.add('window__titlebar-link');
-    const img = document.createElement('img');
-    img.src = titlebarLink.iconSrc;
-    img.alt = titlebarLink.alt ?? '';
-    a.appendChild(img);
+    if (titlebarLink.svgHTML) {
+      a.innerHTML = titlebarLink.svgHTML;
+    } else {
+      const img = document.createElement('img');
+      img.src = titlebarLink.iconSrc;
+      img.alt = titlebarLink.alt ?? '';
+      a.appendChild(img);
+    }
     titlebarExtra = a;
   }
 
