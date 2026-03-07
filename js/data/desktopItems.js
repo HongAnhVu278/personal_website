@@ -25,13 +25,13 @@ export const desktopItems = [
     label: 'Writing.txt',
     icon: 'assets/file.png',
     position: { gridArea: 'writing' },
-    interactive: false,
+    interactive: true,
   },
   {
     id: 'contact',
     label: 'Contacts.txt',
     icon: 'assets/file.png',
     position: { gridArea: 'contact' },
-    interactive: false,
+    interactive: true,
   },
 ];

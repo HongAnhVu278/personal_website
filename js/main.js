@@ -38,6 +38,11 @@ const readmeWindow = createWindow({
   title: 'README.txt',
   icon: 'assets/file.png',
   contentUrl: 'content/readme.txt',
+  linkMap: [
+    { text: 'Projects', href: '#' },
+    { text: 'Experience', href: '#' },
+    { text: 'Writing', href: '#' },
+  ],
   onOpen: () => taskbar.setActiveFile('README.txt'),
   onClose: () => {
     if (taskbar.getActiveFile() === 'README.txt') taskbar.clearActiveFile();
@@ -130,11 +135,46 @@ const experienceWindow = createFolderWindow({
 });
 mountWindow(experienceWindow, nextPosition());
 
+// writing window
+const writingWindow = createWindow({
+  title: 'Writing.txt',
+  icon: 'assets/file.png',
+  contentUrl: 'content/writing.txt',
+  linkMap: [
+    // { text: 'Article Title One', href: 'https://...' },
+  ],
+  onOpen: () => taskbar.setActiveFile('Writing.txt'),
+  onClose: () => {
+    if (taskbar.getActiveFile() === 'Writing.txt') taskbar.clearActiveFile();
+  },
+});
+mountWindow(writingWindow, nextPosition());
+
+// contacts window
+const contactsWindow = createWindow({
+  title: 'Contacts.txt',
+  icon: 'assets/file.png',
+  contentUrl: 'content/contacts.txt',
+  linkMap: [
+    // { text: '@email.com', href: 'mailto:@email.com' },
+    // { text: 'github.com/', href: 'https://github.com/' },
+    // { text: 'linkedin.com/in/', href: 'https://linkedin.com/in/' },
+    // { text: 'twitter.com/', href: 'https://twitter.com/' },
+  ],
+  onOpen: () => taskbar.setActiveFile('Contacts.txt'),
+  onClose: () => {
+    if (taskbar.getActiveFile() === 'Contacts.txt') taskbar.clearActiveFile();
+  },
+});
+mountWindow(contactsWindow, nextPosition());
+
 // window map for desktop icon clicks
 const windowMap = {
   readme: readmeWindow,
   projects: projectsWindow,
   experience: experienceWindow,
+  writing: writingWindow,
+  contact: contactsWindow,
 };
 
 // desktop icons
