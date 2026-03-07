@@ -10,3 +10,8 @@
   height: var(--cell-size);
   border: 1px solid var(--color-grid-line);
 }
+
+.bg-cell--c0 { background-color: var(--color-cell-0); }
+.bg-cell--c1 { background-color: var(--color-cell-1); }
+.bg-cell--c2 { background-color: var(--color-cell-2); }
+.bg-cell--c3 { background-color: var(--color-cell-3); }

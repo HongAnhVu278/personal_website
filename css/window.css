@@ -23,7 +23,7 @@
   justify-content: space-between;
   background-color: var(--color-window-title-bg);
   padding: 6px 10px;
-  cursor: grab;
+  cursor: url('../assets/handdrag1_sm.png'), grab;
   user-select: none;
 }
 
@@ -41,7 +41,7 @@
 
 .window__title {
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-bold);
+  -webkit-text-stroke: 0.5px currentColor;
 }
 
 /* close button*/
@@ -51,7 +51,7 @@
   padding: 0;
   border: none;
   background: transparent;
-  cursor: pointer;
+  cursor: url('../assets/hand1_sm.png'), pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,7 +143,7 @@
   font-weight: var(--font-weight-medium);
   background: transparent;
   border: 2px solid transparent;
-  cursor: pointer;
+  cursor: url('../assets/hand1_sm.png'), pointer;
   padding: 4px 8px;
   text-align: left;
 }
@@ -172,7 +172,7 @@
   align-items: center;
   gap: 4px;
   width: 80px;
-  cursor: pointer;
+  cursor: url('../assets/hand1_sm.png'), pointer;
   padding: 6px;
   text-align: center;
   user-select: none;

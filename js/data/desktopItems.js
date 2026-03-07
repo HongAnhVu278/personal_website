@@ -30,7 +30,7 @@ export const desktopItems = [
   {
     id: 'contact',
     label: 'Contacts.txt',
-    icon: 'assets/file.png',
+    icon: 'assets/contacts.png',
     position: { gridArea: 'contact' },
     interactive: true,
   },

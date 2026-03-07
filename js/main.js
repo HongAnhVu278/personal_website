@@ -153,7 +153,7 @@ mountWindow(writingWindow, nextPosition());
 // contacts window
 const contactsWindow = createWindow({
   title: 'Contacts.txt',
-  icon: 'assets/file.png',
+  icon: 'assets/contacts.png',
   contentUrl: 'content/contacts.txt',
   linkMap: [
     // { text: '@email.com', href: 'mailto:@email.com' },

@@ -1,22 +1,26 @@
 :root {
   /* typo */
-  --font-family: 'IBM Plex Mono', monospace;
-  --font-size-base: 14px;
-  --font-size-sm: 12px;
-  --font-size-lg: 16px;
+  --font-family: 'VT323', monospace;
+  --font-size-base: 20px;
+  --font-size-sm: 16px;
+  --font-size-lg: 24px;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
   /* colors */
-  --color-bg: #CFE4C5;
-  --color-grid-line: #a3c99a;
-  --color-grid-hover: #F9B3A7;
-  --color-window-title-bg: #7ec8e3;
+  --color-bg: #F5F0EB;
+  --color-grid-line: rgba(0, 0, 0, 0.06);
+  --color-grid-hover: #F5EDE3;
+  --color-cell-0: #73A9AD;  /* Muted Teal */
+  --color-cell-1: #90C8AC;  /* Sage Green */
+  --color-cell-2: #C4DFAA;  /* Light Yellow-Green */
+  --color-cell-3: #F5F0BB;  /* Pale Cream Yellow */
+  --color-window-title-bg: #6B9BAF;
   --color-window-body-bg: #f5f5f5;
-  --color-window-border: #5ba3c9;
-  --color-window-title-bg-yellow: #FFD966;
-  --color-window-border-yellow: #C9A227;
+  --color-window-border: #527a8a;
+  --color-window-title-bg-yellow: #F0D080;
+  --color-window-border-yellow: #c4a54e;
   --color-taskbar-bg: #FFE19A;
   --color-taskbar-text: #333;
   --color-icon-label: #333;
@@ -31,7 +35,7 @@
   /* spacing */
   --taskbar-height: 64px;
   --icon-size: 72px;
-  --cell-size: 24px;
+  --cell-size: 16px;
   --folder-sidebar-width: 120px;
   --folder-item-size: 56px;
 }
@@ -40,5 +44,10 @@ body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   color: var(--color-text);
-  font-weight: 500; 
+  font-weight: 500;
+  cursor: url('../assets/arrow1_sm.png'), auto;
+}
+
+a, button, [role="button"] {
+  cursor: url('../assets/hand1_sm.png'), pointer;
 }

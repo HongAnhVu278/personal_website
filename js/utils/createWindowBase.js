@@ -63,7 +63,7 @@ export function createWindowBase({ title, icon, theme = 'blue', titlebarExtra, o
     isDragging = true;
     offsetX = e.clientX - el.offsetLeft;
     offsetY = e.clientY - el.offsetTop;
-    titlebar.style.cursor = 'grabbing';
+    titlebar.style.cursor = "url('assets/handdrag1_sm.png'), grabbing";
   });
 
   document.addEventListener('mousemove', (e) => {
@@ -74,7 +74,7 @@ export function createWindowBase({ title, icon, theme = 'blue', titlebarExtra, o
 
   document.addEventListener('mouseup', () => {
     isDragging = false;
-    titlebar.style.cursor = 'grab';
+    titlebar.style.cursor = "url('assets/handdrag1_sm.png'), grab";
   });
 
   return { el, titlebar, body, open, close };
