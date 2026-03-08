@@ -28,9 +28,8 @@ export function createBackground(containerEl) {
     const fragment = document.createDocumentFragment();
 
     for (let i = 0; i < total; i++) {
-      const colorIndex = Math.floor(rand() * 4);
       const cell = document.createElement('div');
-      cell.classList.add('bg-cell', `bg-cell--c${colorIndex}`);
+      cell.classList.add('bg-cell');
       fragment.appendChild(cell);
     }
 

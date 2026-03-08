@@ -40,8 +40,14 @@
   <!-- layer 4: bottom taskbar -->
   <footer id="taskbar" class="taskbar">
     <div class="taskbar__left">
-      <img src="assets/fish_logo.png" alt="Logo" class="taskbar__logo" />
-      <span class="taskbar__active-file"></span>
+      <button class="taskbar__start">
+        <img src="assets/fish_logo.png" alt="Logo" class="taskbar__logo" />
+        <span class="taskbar__start-label">start</span>
+      </button>
+      <div class="taskbar__active-file">
+        <img class="taskbar__active-icon" />
+        <span class="taskbar__active-text"></span>
+      </div>
     </div>
     <span class="taskbar__clock"></span>
   </footer>

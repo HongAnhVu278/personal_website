@@ -2,5 +2,5 @@ Viettel Telecom
 -------------------
 May 2024 - August 2024
 -------------------
-+) Implemented JWT-based authentication and authorization with Java Spring Boot
-+) Developed RESTful APIs for post and comment management with a four-level nested reply system, backed by MongoDB
+• Implemented JWT-based authentication and authorization with Java Spring Boot
+• Developed RESTful APIs for post and comment management with a four-level nested reply system, backed by MongoDB

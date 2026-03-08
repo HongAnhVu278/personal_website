@@ -1,12 +1,31 @@
 export function createTaskbar({ activeFileEl, clockEl }) {
+  const activeIcon = activeFileEl.querySelector('.taskbar__active-icon');
+  const activeText = activeFileEl.querySelector('.taskbar__active-text');
+
   // active file
-  function setActiveFile(name) {
-    activeFileEl.textContent = name;
+  function setActiveFile(name, icon) {
+    activeText.textContent = name;
+    if (icon) {
+      activeIcon.src = icon;
+      activeIcon.style.display = '';
+    } else {
+      activeIcon.style.display = 'none';
+    }
+    activeFileEl.classList.remove('taskbar__active-file--empty');
   }
 
   function clearActiveFile() {
-    activeFileEl.textContent = '';
+    activeText.textContent = '';
+    activeIcon.src = '';
+    activeFileEl.classList.add('taskbar__active-file--empty');
   }
+
+  function getActiveFile() {
+    return activeText.textContent;
+  }
+
+  // start hidden
+  activeFileEl.classList.add('taskbar__active-file--empty');
 
   // clock
   function formatTime(date) {
@@ -35,10 +54,6 @@ export function createTaskbar({ activeFileEl, clockEl }) {
 
   updateClock();
   setInterval(updateClock, 1000);
-
-  function getActiveFile() {
-    return activeFileEl.textContent;
-  }
 
   return { setActiveFile, clearActiveFile, getActiveFile };
 }

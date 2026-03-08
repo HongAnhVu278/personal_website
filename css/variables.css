@@ -16,13 +16,13 @@
   --color-cell-1: #90C8AC;  /* Sage Green */
   --color-cell-2: #C4DFAA;  /* Light Yellow-Green */
   --color-cell-3: #F5F0BB;  /* Pale Cream Yellow */
-  --color-window-title-bg: #6B9BAF;
+  --color-window-title-bg: #4A8FE8;
   --color-window-body-bg: #f5f5f5;
-  --color-window-border: #527a8a;
+  --color-window-border: #3670b8;
   --color-window-title-bg-yellow: #F0D080;
   --color-window-border-yellow: #c4a54e;
-  --color-taskbar-bg: #FFE19A;
-  --color-taskbar-text: #333;
+  --color-taskbar-bg: #4A8FE8;
+  --color-taskbar-text: #fff;
   --color-icon-label: #333;
   --color-text: #333;
 

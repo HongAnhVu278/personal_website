@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  border-top: 2px solid #e0c08a;
+  border-top: 2px solid #555;
   font-family: var(--font-family);
 }
 
@@ -20,34 +20,64 @@
   gap: 12px;
 }
 
+.taskbar__start {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #7CC462;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  padding: 6px 14px 6px 10px;
+  cursor: url('../assets/hand1_sm.png'), pointer;
+  height: 100%;
+}
+
 .taskbar__logo {
-  width: 60px;
-  height: 60px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
 }
 
+.taskbar__start-label {
+  color: #fff;
+  font-family: var(--font-family);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
 .taskbar__active-file {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   color: var(--color-taskbar-text);
-  background-color: #FFF0CF;
-  border: 2px solid rgba(192, 57, 43, 0.7);
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(0, 0, 0, 0.3);
   padding: 4px 16px;
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
 }
 
-.taskbar__active-file:empty {
-  background: none;
-  border: none;
-  padding: 0;
+.taskbar__active-file--empty {
+  display: none;
+}
+
+.taskbar__active-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.taskbar__active-text {
+  white-space: nowrap;
 }
 
 .taskbar__clock {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   color: var(--color-taskbar-text);
-  background-color: #FFF0CF;
-  border: 2px solid #c0392b;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(0, 0, 0, 0.3);
   padding: 4px 16px;
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
 }

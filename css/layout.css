@@ -10,7 +10,7 @@
 /* background: lowest layer, receives all mouse events by default */
 .layer--background {
   z-index: var(--z-background);
-  background-color: var(--color-bg);
+  background: url('../assets/background.png') center/cover no-repeat;
 }
 
 /*
