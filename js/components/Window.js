@@ -31,16 +31,22 @@ export function createWindow({ title, icon, contentUrl, onOpen, onClose, theme =
         body.textContent = text;
       }
 
-      // async fill visitor count after render
+      // async fill visitor count after render — use targeted textContent
+      // update instead of replacing innerHTML, which would destroy event listeners
       if (hasVisitorCount) {
+        const counterNode = findTextNode(body, '#...');
         fetch('https://honganh.goatcounter.com/counter/' + encodeURIComponent('/') + '.json')
           .then((r) => r.json())
           .then((data) => {
             const count = data.count_unique ?? data.count ?? '?';
-            body.innerHTML = body.innerHTML.replace('#...', '#' + count);
+            if (counterNode) {
+              counterNode.textContent = counterNode.textContent.replace('#...', '#' + count);
+            }
           })
           .catch(() => {
-            body.innerHTML = body.innerHTML.replace('#...', '#?');
+            if (counterNode) {
+              counterNode.textContent = counterNode.textContent.replace('#...', '#?');
+            }
           });
       }
     })
@@ -104,4 +110,12 @@ function renderContent(text, { linkMap, actionMap, highlightWords, image }) {
   }
 
   return '<pre style="white-space:pre-wrap;font-family:inherit;margin:0">' + safe + '</pre>';
+}
+
+function findTextNode(root, needle) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    if (walker.currentNode.textContent.includes(needle)) return walker.currentNode;
+  }
+  return null;
 }
