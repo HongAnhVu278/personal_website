@@ -3,4 +3,4 @@ XSIG_Research
 This research analyzes geospatial data to examine whether counties with larger park areas experienced lower COVID-19 cases and death rates per capita.
 -------------------
 Tech: Pandas, NumPy, Folium, GeoPandas, and Plotly,
-GitHub: 
+GitHub: https://github.com/HongAnhVu278/XSIG-Research
