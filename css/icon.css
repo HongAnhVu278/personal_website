@@ -5,14 +5,15 @@
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-areas:
     "readme     .  contact"
-    "projects   .  ."
+    "projects   .  writing"
     "experience .  ."
-    "writing    .  .";
+    ".          .  .";
   padding: 20px 60px;
   gap: 8px;
 }
 
-.desktop-icon[data-id="contact"] {
+.desktop-icon[data-id="contact"],
+.desktop-icon[data-id="writing"] {
   justify-self: end;
 }
 

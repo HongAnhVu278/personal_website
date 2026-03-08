@@ -1,31 +1,43 @@
-export function createTaskbar({ activeFileEl, clockEl }) {
-  const activeIcon = activeFileEl.querySelector('.taskbar__active-icon');
-  const activeText = activeFileEl.querySelector('.taskbar__active-text');
+export function createTaskbar({ tabsEl, clockEl }) {
+  const tabs = new Map(); // name → tab element
 
-  // active file
-  function setActiveFile(name, icon) {
-    activeText.textContent = name;
+  function addTab(name, icon) {
+    if (tabs.has(name)) return;
+
+    const tab = document.createElement('div');
+    tab.classList.add('taskbar__tab');
+
     if (icon) {
-      activeIcon.src = icon;
-      activeIcon.style.display = '';
-    } else {
-      activeIcon.style.display = 'none';
+      const img = document.createElement('img');
+      img.src = icon;
+      img.alt = name;
+      img.classList.add('taskbar__tab-icon');
+      img.draggable = false;
+      tab.appendChild(img);
     }
-    activeFileEl.classList.remove('taskbar__active-file--empty');
+
+    const text = document.createElement('span');
+    text.classList.add('taskbar__tab-text');
+    text.textContent = name;
+    tab.appendChild(text);
+
+    tabsEl.appendChild(tab);
+    tabs.set(name, tab);
   }
 
-  function clearActiveFile() {
-    activeText.textContent = '';
-    activeIcon.src = '';
-    activeFileEl.classList.add('taskbar__active-file--empty');
+  function removeTab(name) {
+    const tab = tabs.get(name);
+    if (tab) {
+      tab.remove();
+      tabs.delete(name);
+    }
   }
 
   function getActiveFile() {
-    return activeText.textContent;
+    // return the last tab name (most recently added)
+    const keys = [...tabs.keys()];
+    return keys.length > 0 ? keys[keys.length - 1] : '';
   }
-
-  // start hidden
-  activeFileEl.classList.add('taskbar__active-file--empty');
 
   // clock
   function formatTime(date) {
@@ -55,5 +67,5 @@ export function createTaskbar({ activeFileEl, clockEl }) {
   updateClock();
   setInterval(updateClock, 1000);
 
-  return { setActiveFile, clearActiveFile, getActiveFile };
+  return { addTab, removeTab, getActiveFile };
 }

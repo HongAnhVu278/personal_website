@@ -13,8 +13,7 @@ createBackground(backgroundEl);
 
 // taskbar
 const taskbar = createTaskbar({
-  activeFileEl: document.querySelector('.taskbar__active-file'),
-
+  tabsEl: document.querySelector('.taskbar__tabs'),
   clockEl: document.querySelector('.taskbar__clock'),
 });
 
@@ -46,9 +45,9 @@ const readmeWindow = createWindow({
     'Say hi!!': () => windowMap.contact?.open(),
   },
   highlightWords: ['technology', 'art', 'writing'],
-  onOpen: () => taskbar.setActiveFile('README.txt', 'assets/file.png'),
+  onOpen: () => taskbar.addTab('README.txt', 'assets/file.png'),
   onClose: () => {
-    if (taskbar.getActiveFile() === 'README.txt') taskbar.clearActiveFile();
+    taskbar.removeTab('README.txt');
   },
 });
 mountWindow(readmeWindow, { left: '25%', top: '15%' });
@@ -76,9 +75,9 @@ function openProjectDetail(item) {
       icon: 'assets/file.png',
       contentUrl: item.contentUrl,
       image: item.image,
-      onOpen: () => taskbar.setActiveFile(item.title, 'assets/file.png'),
+      onOpen: () => taskbar.addTab(item.title, 'assets/file.png'),
       onClose: () => {
-        if (taskbar.getActiveFile() === item.title) taskbar.clearActiveFile();
+        taskbar.removeTab(item.title);
       },
     });
     mountWindow(w, nextPosition());
@@ -98,9 +97,9 @@ const projectsWindow = createFolderWindow({
     svgHTML: githubSVG,
     alt: 'GitHub',
   },
-  onOpen: () => taskbar.setActiveFile('Projects', 'assets/folder_yellow.png'),
+  onOpen: () => taskbar.addTab('Projects', 'assets/folder_yellow.png'),
   onClose: () => {
-    if (taskbar.getActiveFile() === 'Projects') taskbar.clearActiveFile();
+    taskbar.removeTab('Projects');
   },
   onItemClick: openProjectDetail,
 });
@@ -116,9 +115,9 @@ function openExperienceDetail(item) {
       icon: 'assets/file.png',
       contentUrl: item.contentUrl,
       linkMap: item.linkMap,
-      onOpen: () => taskbar.setActiveFile(item.title, 'assets/file.png'),
+      onOpen: () => taskbar.addTab(item.title, 'assets/file.png'),
       onClose: () => {
-        if (taskbar.getActiveFile() === item.title) taskbar.clearActiveFile();
+        taskbar.removeTab(item.title);
       },
     });
     mountWindow(w, nextPosition());
@@ -133,9 +132,9 @@ const experienceWindow = createFolderWindow({
   icon: 'assets/folder_blue.png',
   items: experiences,
   filters: ['All', 'Current', 'Past'],
-  onOpen: () => taskbar.setActiveFile('Experience', 'assets/folder_blue.png'),
+  onOpen: () => taskbar.addTab('Experience', 'assets/folder_blue.png'),
   onClose: () => {
-    if (taskbar.getActiveFile() === 'Experience') taskbar.clearActiveFile();
+    taskbar.removeTab('Experience');
   },
   onItemClick: openExperienceDetail,
 });
@@ -150,9 +149,9 @@ const writingWindow = createWindow({
     { text: 'Recurse Center', href: 'https://www.recurse.com/' },
     { text: 'Debugging My 20s', href: 'https://debuggingmy20s.substack.com/' },
   ],
-  onOpen: () => taskbar.setActiveFile('Writing.txt', 'assets/file.png'),
+  onOpen: () => taskbar.addTab('Writing.txt', 'assets/file.png'),
   onClose: () => {
-    if (taskbar.getActiveFile() === 'Writing.txt') taskbar.clearActiveFile();
+    taskbar.removeTab('Writing.txt');
   },
 });
 mountWindow(writingWindow, nextPosition());
@@ -168,9 +167,9 @@ const contactsWindow = createWindow({
     { text: 'linkedin.com/in/anh-vu-120879242', href: 'https://www.linkedin.com/in/anh-vu-120879242/' },
     { text: 'instagram.com/h.anh_vu', href: 'https://www.instagram.com/h.anh_vu/' },
   ],
-  onOpen: () => taskbar.setActiveFile('Contacts.txt', 'assets/contacts.png'),
+  onOpen: () => taskbar.addTab('Contacts.txt', 'assets/contacts.png'),
   onClose: () => {
-    if (taskbar.getActiveFile() === 'Contacts.txt') taskbar.clearActiveFile();
+    taskbar.removeTab('Contacts.txt');
   },
 });
 mountWindow(contactsWindow, nextPosition());
