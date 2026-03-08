@@ -35,7 +35,7 @@
   /* spacing */
   --taskbar-height: 64px;
   --icon-size: 72px;
-  --cell-size: 16px;
+  --cell-size: 12px;
   --folder-sidebar-width: 120px;
   --folder-item-size: 56px;
 }

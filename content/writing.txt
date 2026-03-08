@@ -1,6 +1,6 @@
 Writing
 -------------------
-I write about the messy parts of figuring things out as a new grad in tech. The job rejections, the burnout, the small wins. Find me here: Debugging My 20s
+I write about the messy parts of navigating the unknown as a new grad in tech. The job rejections, the burnout, the small wins. Find me here: Debugging My 20s
 -------------------
 +) What I learned after getting rejected from Recurse Center:
    -) Part 1: https://debuggingmy20s.substack.com/p/what-i-learned-and-did-after-being

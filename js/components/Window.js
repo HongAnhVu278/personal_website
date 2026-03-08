@@ -8,6 +8,12 @@ export function createWindow({ title, icon, contentUrl, onOpen, onClose, theme =
   fetch(contentUrl)
     .then((res) => res.text())
     .then((text) => {
+      // render immediately with "..." placeholder for visitor count
+      const hasVisitorCount = text.includes('{{visitor_count}}');
+      if (hasVisitorCount) {
+        text = text.replace('{{visitor_count}}', '...');
+      }
+
       const hasFormatting = linkMap || actionMap || highlightWords || image;
       if (hasFormatting) {
         body.innerHTML = renderContent(text, { linkMap, actionMap, highlightWords, image });
@@ -23,6 +29,19 @@ export function createWindow({ title, icon, contentUrl, onOpen, onClose, theme =
         }
       } else {
         body.textContent = text;
+      }
+
+      // async fill visitor count after render
+      if (hasVisitorCount) {
+        fetch('https://honganh.goatcounter.com/counter/' + encodeURIComponent('/') + '.json')
+          .then((r) => r.json())
+          .then((data) => {
+            const count = data.count_unique ?? data.count ?? '?';
+            body.innerHTML = body.innerHTML.replace('#...', '#' + count);
+          })
+          .catch(() => {
+            body.innerHTML = body.innerHTML.replace('#...', '#?');
+          });
       }
     })
     .catch(() => { body.textContent = 'Failed to load content.'; });
