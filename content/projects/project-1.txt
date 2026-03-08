@@ -1,7 +1,7 @@
-Project One
+Thank you for applying (game)
 -------------------
-[Replace with project description]
+A little game I made about the job hunt. You play through the cycle of applying, waiting, and getting rejected.
 -------------------
-Tech: [list technologies]
-Role: [your role]
-Link: [project URL]
+Tech: Vanilla JavaScript, CSS, Phaser 3, and Tiled Map Editor
+Demo: https://honganhvu278.github.io/thank-you-for-applying-game/
+GitHub: https://github.com/HongAnhVu278/thank-you-for-applying-game

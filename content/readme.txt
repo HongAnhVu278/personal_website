@@ -1,12 +1,11 @@
-Hey, this is Anh!
+Hii, this is Anh 🙋🏻‍♀️!
 -------------------
-I'm currently a software engineer based in sunny New York.
-I'm interested in the intersection of technology and art. I enjoy writing and discovering how blahblhablhablh
+I'm a software engineer based in New York, early in my career and still figuring things out. I'm interested in the intersection of technology and art, and I enjoy writing along the way 💌
 -------------------
 Get to know me through my:
-+) Projects
++) Projects 
 +) Experience
 +) Writing
 -------------------
-You are #30289 visitors
 Say hi!!
+

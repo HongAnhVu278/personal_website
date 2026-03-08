@@ -1,7 +1,6 @@
-Project Five
+XSIG_Research
 -------------------
-[Replace with project description]
+This research analyzes geospatial data to examine whether counties with larger park areas experienced lower COVID-19 cases and death rates per capita.
 -------------------
-Tech: [list technologies]
-Role: [your role]
-Link: [project URL]
+Tech: Pandas, NumPy, Folium, GeoPandas, and Plotly,
+GitHub: 

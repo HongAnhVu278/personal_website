@@ -38,11 +38,13 @@ const readmeWindow = createWindow({
   title: 'README.txt',
   icon: 'assets/file.png',
   contentUrl: 'content/readme.txt',
-  linkMap: [
-    { text: 'Projects', href: '#' },
-    { text: 'Experience', href: '#' },
-    { text: 'Writing', href: '#' },
-  ],
+  actionMap: {
+    'Projects': () => windowMap.projects?.open(),
+    'Experience': () => windowMap.experience?.open(),
+    'Writing': () => windowMap.writing?.open(),
+    'Say hi!!': () => windowMap.contact?.open(),
+  },
+  highlightWords: ['technology', 'art', 'writing'],
   onOpen: () => taskbar.setActiveFile('README.txt'),
   onClose: () => {
     if (taskbar.getActiveFile() === 'README.txt') taskbar.clearActiveFile();
@@ -72,6 +74,7 @@ function openProjectDetail(item) {
       title: item.title,
       icon: 'assets/file.png',
       contentUrl: item.contentUrl,
+      image: item.image,
       onOpen: () => taskbar.setActiveFile(item.title),
       onClose: () => {
         if (taskbar.getActiveFile() === item.title) taskbar.clearActiveFile();
@@ -90,7 +93,7 @@ const projectsWindow = createFolderWindow({
   items: projects,
   filters: ['All', 'Web Dev', 'Creative', 'Data'],
   titlebarLink: {
-    href: 'https://github.com/yourusername',
+    href: 'https://github.com/HongAnhVu278',
     svgHTML: githubSVG,
     alt: 'GitHub',
   },
@@ -111,6 +114,7 @@ function openExperienceDetail(item) {
       title: item.title,
       icon: 'assets/file.png',
       contentUrl: item.contentUrl,
+      linkMap: item.linkMap,
       onOpen: () => taskbar.setActiveFile(item.title),
       onClose: () => {
         if (taskbar.getActiveFile() === item.title) taskbar.clearActiveFile();
@@ -127,6 +131,7 @@ const experienceWindow = createFolderWindow({
   title: 'Experience',
   icon: 'assets/folder_blue.png',
   items: experiences,
+  filters: ['All', 'Current', 'Past'],
   onOpen: () => taskbar.setActiveFile('Experience'),
   onClose: () => {
     if (taskbar.getActiveFile() === 'Experience') taskbar.clearActiveFile();
@@ -141,7 +146,8 @@ const writingWindow = createWindow({
   icon: 'assets/file.png',
   contentUrl: 'content/writing.txt',
   linkMap: [
-    // { text: 'Article Title One', href: 'https://...' },
+    { text: 'Recurse Center', href: 'https://www.recurse.com/' },
+    { text: 'Debugging My 20s', href: 'https://debuggingmy20s.substack.com/' },
   ],
   onOpen: () => taskbar.setActiveFile('Writing.txt'),
   onClose: () => {
@@ -156,10 +162,10 @@ const contactsWindow = createWindow({
   icon: 'assets/contacts.png',
   contentUrl: 'content/contacts.txt',
   linkMap: [
-    // { text: '@email.com', href: 'mailto:@email.com' },
-    // { text: 'github.com/', href: 'https://github.com/' },
-    // { text: 'linkedin.com/in/', href: 'https://linkedin.com/in/' },
-    // { text: 'twitter.com/', href: 'https://twitter.com/' },
+    { text: 'honganhvu278@gmail.com', href: 'mailto:honganhvu278@gmail.com' },
+    { text: 'github.com/HongAnhVu278', href: 'https://github.com/HongAnhVu278' },
+    { text: 'linkedin.com/in/anh-vu-120879242', href: 'https://www.linkedin.com/in/anh-vu-120879242/' },
+    { text: 'instagram.com/h.anh_vu', href: 'https://www.instagram.com/h.anh_vu/' },
   ],
   onOpen: () => taskbar.setActiveFile('Contacts.txt'),
   onClose: () => {

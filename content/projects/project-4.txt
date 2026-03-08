@@ -1,7 +1,9 @@
-Project Four
+Waldo Website
 -------------------
-[Replace with project description]
+A full-stack community platform built with two other engineers for an art studio in Gettysburg, PA, supporting channels, posts, comments, likes, and notifications.
 -------------------
-Tech: [list technologies]
-Role: [your role]
-Link: [project URL]
+Tech: React, Express/Node.js, and MySQL
+Demo: https://drive.google.com/file/d/1X0ZRGqEhkDU_YYKDK_QZvHhpZY1RVw0w/view?usp=sharing
+GitHub: 
+    +) Backend: https://github.com/RatulPradhan/Waldos_backend
+    +) Frontend: https://github.com/RatulPradhan/Waldos_frontend

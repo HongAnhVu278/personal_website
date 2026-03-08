@@ -1,7 +1,10 @@
-Project Three
+Fractal Trees
 -------------------
-[Replace with project description]
+An interactive creative-coding project that uses L-systems and turtle graphics to visualize different emotional states as generative fractal trees.
+
+The project explores how abstract emotions can be encoded as system parameters( grammar, angles, recursion depth, and motion) rather than narrative or metaphor.
 -------------------
-Tech: [list technologies]
-Role: [your role]
-Link: [project URL]
+Tech: p5.js
+Demo: https://honganhvu278.github.io/fractal_trees/
+GitHub: https://github.com/HongAnhVu278/fractal_trees?tab=readme-ov-file
+

@@ -45,6 +45,9 @@ body {
   font-size: var(--font-size-base);
   color: var(--color-text);
   font-weight: 500;
+}
+
+*, *::before, *::after {
   cursor: url('../assets/arrow1_sm.png'), auto;
 }
 

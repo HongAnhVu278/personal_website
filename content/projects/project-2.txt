@@ -1,7 +1,7 @@
-Project Two
+Mood notes
 -------------------
-[Replace with project description]
+Reflect is a video-first reflection app where you have a live conversation with an AI coach. 
+After the session, it analyzes your video, audio, and transcript to surface emotional shifts and themes you might not have noticed yourself,giving you the kind of emotional mirroring that makes therapy actually useful.
 -------------------
-Tech: [list technologies]
-Role: [your role]
-Link: [project URL]
+Tech: React, Express, Node.js, Tavus CVI, Raven-1, Daily.co
+GitHub: https://github.com/HongAnhVu278/mood-notes

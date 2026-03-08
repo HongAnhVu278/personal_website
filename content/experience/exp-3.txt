@@ -1,5 +1,7 @@
-Role @ Company Three
+X-Sig Research (Gettysburg College)
 -------------------
-[Date range]
+May 2023 - July 2023
 -------------------
-[Replace with role description]
+• Analyzed large datasets to extract insights on COVID-19 and park accessibility
+• Performed linear regression to study correlations between COVID-19 rates and green space access
+• Created geospatial visualizations, to highlight disparities in park access and pandemic impact

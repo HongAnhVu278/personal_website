@@ -36,7 +36,7 @@
 }
 
 .desktop-icon--disabled {
-  cursor: default;
+  cursor: url('../assets/arrow1_sm.png'), default;
   opacity: 0.75;
 }
 

@@ -1,5 +1,6 @@
-Role @ Company Two
+Viettel Telecom
 -------------------
-[Date range]
+May 2024 - August 2024
 -------------------
-[Replace with role description]
++) Implemented JWT-based authentication and authorization with Java Spring Boot
++) Developed RESTful APIs for post and comment management with a four-level nested reply system, backed by MongoDB
