@@ -38,7 +38,7 @@ export function createWindow({ title, icon, contentUrl, onOpen, onClose, theme =
         fetch('https://honganh.goatcounter.com/counter/' + encodeURIComponent('/') + '.json')
           .then((r) => r.json())
           .then((data) => {
-            const count = data.count_unique ?? data.count ?? '?';
+            const count = data.count ?? data.count_unique ?? '?';
             if (counterNode) {
               counterNode.textContent = counterNode.textContent.replace('#...', '#' + count);
             }
