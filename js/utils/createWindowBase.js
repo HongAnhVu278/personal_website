@@ -1,3 +1,5 @@
+let zCounter = 1;
+
 export function createWindowBase({ title, icon, theme = 'blue', titlebarExtra, onOpen, onClose }) {
   const el = document.createElement('div');
   el.classList.add('window');
@@ -40,8 +42,14 @@ export function createWindowBase({ title, icon, theme = 'blue', titlebarExtra, o
   el.appendChild(titlebar);
   el.appendChild(body);
 
+  // bring to front on click anywhere on the window
+  el.addEventListener('mousedown', () => {
+    el.style.zIndex = ++zCounter;
+  });
+
   // open / close
   function open() {
+    el.style.zIndex = ++zCounter;
     el.classList.add('window--open');
     onOpen?.();
   }
