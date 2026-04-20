@@ -2,6 +2,5 @@ VeneraAI
 -------------------
 June 2025 - current 
 -------------------
-• Lead the Key Insight Cards feature, owning requirements, system design, and ticket breakdown for an AI-powered health dashboard
 • Built an LLM chat system that switches between cloud and on-device models based on network connectivity, with real-time streaming and message persistence 
 • Implemented a FastAPI authentication module for Doctor user registration and login
