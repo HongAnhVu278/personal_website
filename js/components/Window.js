@@ -1,7 +1,7 @@
 import { createWindowBase } from '../utils/createWindowBase.js';
 
 export function createWindow({ title, icon, contentUrl, onOpen, onClose, theme = 'blue', linkMap, actionMap, highlightWords, image }) {
-  const { el, body, open, close } = createWindowBase({ title, icon, theme, onOpen, onClose });
+  const { el, body, open, close, focus } = createWindowBase({ title, icon, theme, onOpen, onClose });
 
   // load content
   body.textContent = 'Loading...';
@@ -52,7 +52,7 @@ export function createWindow({ title, icon, contentUrl, onOpen, onClose, theme =
     })
     .catch(() => { body.textContent = 'Failed to load content.'; });
 
-  return { el, open, close };
+  return { el, open, close, focus };
 }
 
 function renderContent(text, { linkMap, actionMap, highlightWords, image }) {

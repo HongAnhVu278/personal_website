@@ -29,7 +29,7 @@ export function createFolderWindow({
     titlebarExtra = a;
   }
 
-  const { el, body, open, close } = createWindowBase({
+  const { el, body, open, close, focus } = createWindowBase({
     title, icon, theme: 'yellow', titlebarExtra, onOpen, onClose,
   });
 
@@ -100,5 +100,5 @@ export function createFolderWindow({
     });
   }
 
-  return { el, open, close };
+  return { el, open, close, focus };
 }

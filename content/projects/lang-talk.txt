@@ -1,0 +1,6 @@
+Lang Talk
+-------------------
+A presentation drawing parallels between learning a programming language and learning a natural language.
+-------------------
+Talk: https://honganhvu278.github.io/lang-talk/
+GitHub: https://github.com/HongAnhVu278/lang-talk

@@ -42,14 +42,16 @@ export function createWindowBase({ title, icon, theme = 'blue', titlebarExtra, o
   el.appendChild(titlebar);
   el.appendChild(body);
 
-  // bring to front on click anywhere on the window
-  el.addEventListener('mousedown', () => {
+  // bring to front
+  function focus() {
     el.style.zIndex = ++zCounter;
-  });
+  }
+
+  el.addEventListener('mousedown', focus);
 
   // open / close
   function open() {
-    el.style.zIndex = ++zCounter;
+    focus();
     el.classList.add('window--open');
     onOpen?.();
   }
@@ -85,5 +87,5 @@ export function createWindowBase({ title, icon, theme = 'blue', titlebarExtra, o
     titlebar.style.cursor = "url('assets/handdrag1_sm.png'), grab";
   });
 
-  return { el, titlebar, body, open, close };
+  return { el, titlebar, body, open, close, focus };
 }

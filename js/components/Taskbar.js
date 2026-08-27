@@ -1,11 +1,13 @@
 export function createTaskbar({ tabsEl, clockEl }) {
   const tabs = new Map(); // name → tab element
 
-  function addTab(name, icon) {
+  function addTab(name, icon, onClick) {
     if (tabs.has(name)) return;
 
     const tab = document.createElement('div');
     tab.classList.add('taskbar__tab');
+    tab.title = name;
+    if (onClick) tab.addEventListener('click', onClick);
 
     if (icon) {
       const img = document.createElement('img');
@@ -31,12 +33,6 @@ export function createTaskbar({ tabsEl, clockEl }) {
       tab.remove();
       tabs.delete(name);
     }
-  }
-
-  function getActiveFile() {
-    // return the last tab name (most recently added)
-    const keys = [...tabs.keys()];
-    return keys.length > 0 ? keys[keys.length - 1] : '';
   }
 
   // clock
@@ -67,5 +63,5 @@ export function createTaskbar({ tabsEl, clockEl }) {
   updateClock();
   setInterval(updateClock, 1000);
 
-  return { addTab, removeTab, getActiveFile };
+  return { addTab, removeTab };
 }

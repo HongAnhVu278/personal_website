@@ -45,7 +45,7 @@ const readmeWindow = createWindow({
     'Say hi!!': () => windowMap.contact?.open(),
   },
   highlightWords: ['technology', 'art', 'writing'],
-  onOpen: () => taskbar.addTab('README.txt', 'assets/file.png'),
+  onOpen: () => taskbar.addTab('README.txt', 'assets/file.png', () => readmeWindow.focus()),
   onClose: () => {
     taskbar.removeTab('README.txt');
   },
@@ -75,7 +75,7 @@ function openProjectDetail(item) {
       icon: 'assets/file.png',
       contentUrl: item.contentUrl,
       image: item.image,
-      onOpen: () => taskbar.addTab(item.title, 'assets/file.png'),
+      onOpen: () => taskbar.addTab(item.title, 'assets/file.png', () => w.focus()),
       onClose: () => {
         taskbar.removeTab(item.title);
       },
@@ -91,13 +91,13 @@ const projectsWindow = createFolderWindow({
   title: 'Projects',
   icon: 'assets/folder_yellow.png',
   items: projects,
-  filters: ['All', 'Web Dev', 'Creative', 'Data'],
+  filters: ['All', 'Web Dev', 'Creative', 'Data', 'Talks'],
   titlebarLink: {
     href: 'https://github.com/HongAnhVu278',
     svgHTML: githubSVG,
     alt: 'GitHub',
   },
-  onOpen: () => taskbar.addTab('Projects', 'assets/folder_yellow.png'),
+  onOpen: () => taskbar.addTab('Projects', 'assets/folder_yellow.png', () => projectsWindow.focus()),
   onClose: () => {
     taskbar.removeTab('Projects');
   },
@@ -115,7 +115,7 @@ function openExperienceDetail(item) {
       icon: 'assets/file.png',
       contentUrl: item.contentUrl,
       linkMap: item.linkMap,
-      onOpen: () => taskbar.addTab(item.title, 'assets/file.png'),
+      onOpen: () => taskbar.addTab(item.title, 'assets/file.png', () => w.focus()),
       onClose: () => {
         taskbar.removeTab(item.title);
       },
@@ -132,7 +132,7 @@ const experienceWindow = createFolderWindow({
   icon: 'assets/folder_blue.png',
   items: experiences,
   filters: ['All', 'Current', 'Past'],
-  onOpen: () => taskbar.addTab('Experience', 'assets/folder_blue.png'),
+  onOpen: () => taskbar.addTab('Experience', 'assets/folder_blue.png', () => experienceWindow.focus()),
   onClose: () => {
     taskbar.removeTab('Experience');
   },
@@ -148,8 +148,9 @@ const writingWindow = createWindow({
   linkMap: [
     { text: 'Recurse Center', href: 'https://www.recurse.com/' },
     { text: 'Debugging My 20s', href: 'https://debuggingmy20s.substack.com/' },
+    { text: 'Codedex', href: 'https://www.codedex.io/' },
   ],
-  onOpen: () => taskbar.addTab('Writing.txt', 'assets/file.png'),
+  onOpen: () => taskbar.addTab('Writing.txt', 'assets/file.png', () => writingWindow.focus()),
   onClose: () => {
     taskbar.removeTab('Writing.txt');
   },
@@ -167,7 +168,7 @@ const contactsWindow = createWindow({
     { text: 'linkedin.com/in/anh-vu-120879242', href: 'https://www.linkedin.com/in/anh-vu-120879242/' },
     { text: 'instagram.com/h.anh_vu', href: 'https://www.instagram.com/h.anh_vu/' },
   ],
-  onOpen: () => taskbar.addTab('Contacts.txt', 'assets/contacts.png'),
+  onOpen: () => taskbar.addTab('Contacts.txt', 'assets/contacts.png', () => contactsWindow.focus()),
   onClose: () => {
     taskbar.removeTab('Contacts.txt');
   },

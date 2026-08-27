@@ -1,0 +1,7 @@
+Dream Jobs
+-------------------
+A scrollytelling data visualization exploring childhood career aspirations, turning survey data into a narrative.
+-------------------
+Tech: HTML/CSS/JavaScript, Python, Pandas
+Demo: https://honganhvu278.github.io/question/
+GitHub: https://github.com/HongAnhVu278/question

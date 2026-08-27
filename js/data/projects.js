@@ -1,12 +1,39 @@
 export const projects = [
   {
+    id: 'project-6',
+    label: 'bitly_tama.txt',
+    icon: 'assets/file.png',
+    categories: ['Creative', 'Talks'],
+    title: 'Bitly: Terminal Tamagotchi',
+    contentUrl: 'content/projects/terminal-tama.txt',
+    image: 'assets/terminal-tama.png',
+  },
+  {
+    id: 'project-7',
+    label: 'dream_jobs.txt',
+    icon: 'assets/file.png',
+    categories: ['Data', 'Talks', 'Web Dev'],
+    title: 'Dream Jobs',
+    contentUrl: 'content/projects/dream-job.txt',
+    image: 'assets/dream-job.png',
+  },
+  {
     id: 'project-1',
-    label: '(game)ty_for_applying.txt',
+    label: '(game)job_search.txt',
     icon: 'assets/file.png',
     categories: ['Web Dev', 'Creative'],
     title: 'Thank You For Applying',
     contentUrl: 'content/projects/project-1.txt',
     image: 'assets/project_1.png',
+  },
+  {
+    id: 'project-8',
+    label: 'lang_talk.txt',
+    icon: 'assets/file.png',
+    categories: ['Talks'],
+    title: 'Lang Talk',
+    contentUrl: 'content/projects/lang-talk.txt',
+    image: 'assets/lang-talk.png',
   },
   {
     id: 'project-2',
@@ -18,6 +45,7 @@ export const projects = [
     image: 'assets/project_2.png',
   },
   {
+
     id: 'project-3',
     label: 'fractal_trees.txt',
     icon: 'assets/file.png',
@@ -43,5 +71,5 @@ export const projects = [
     title: 'XSIG Research',
     contentUrl: 'content/projects/project-5.txt',
     image: 'assets/project_5.png',
-  },
+  }
 ];

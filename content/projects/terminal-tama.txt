@@ -1,0 +1,7 @@
+Bitly: Terminal Tamagotchi
+-------------------
+A terminal pet that starves within three days unless fed by git commits, wired through a git-hook wrapper with JSON persistence.
+-------------------
+Tech: Go, Bubble Tea, Git hooks
+Demo/Manual: https://honganhvu278.github.io/bitly-manual/
+GitHub: https://github.com/HongAnhVu278/tamagotchi-tui
