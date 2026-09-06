@@ -70,6 +70,10 @@
   cursor: url('../assets/hand1_sm.png'), pointer;
 }
 
+.taskbar__tab * {
+  cursor: url('../assets/hand1_sm.png'), pointer;
+}
+
 .taskbar__tab:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }

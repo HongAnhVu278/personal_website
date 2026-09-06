@@ -6,6 +6,8 @@ export function createFolderWindow({
   items,
   filters,
   titlebarLink,
+  layout = 'icons',
+  wide = false,
   onOpen,
   onClose,
   onItemClick,
@@ -33,7 +35,12 @@ export function createFolderWindow({
     title, icon, theme: 'yellow', titlebarExtra, onOpen, onClose,
   });
 
+  if (wide) el.classList.add('window--wide');
+
   body.classList.add('window__body--folder');
+
+  // gallery layout shows item.image + item.title; icons show item.icon + item.label
+  const isGallery = layout === 'gallery';
 
   // sidebar (optional)
   let activeFilter = 'All';
@@ -65,21 +72,24 @@ export function createFolderWindow({
   // main file grid
   const main = document.createElement('div');
   main.classList.add('folder__main');
+  if (isGallery) main.classList.add('folder__main--gallery');
 
   const itemEls = items.map((item) => {
     const div = document.createElement('div');
     div.classList.add('folder-item');
+    if (isGallery) div.classList.add('folder-item--card');
     div.dataset.categories = (item.categories ?? []).join(',');
 
     const img = document.createElement('img');
-    img.src = item.icon ?? 'assets/file.png';
-    img.alt = item.label;
+    img.src = (isGallery ? item.image : null) ?? item.icon ?? 'assets/file.png';
+    img.alt = item.title ?? item.label;
     img.classList.add('folder-item__img');
     img.draggable = false;
+    img.loading = 'lazy';
 
     const label = document.createElement('span');
     label.classList.add('folder-item__label');
-    label.textContent = item.label;
+    label.textContent = isGallery ? (item.title ?? item.label) : item.label;
 
     div.appendChild(img);
     div.appendChild(label);

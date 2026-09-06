@@ -51,6 +51,13 @@ body {
   cursor: url('../assets/arrow1_sm.png'), auto;
 }
 
-a, button, [role="button"] {
+/*
+  the universal rule above also hits children of clickable elements, so the
+  hand cursor has to be restated for descendants or hovering an inner
+  <img>/<span> falls back to the arrow
+*/
+a, a *,
+button, button *,
+[role="button"], [role="button"] * {
   cursor: url('../assets/hand1_sm.png'), pointer;
 }

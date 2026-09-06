@@ -22,7 +22,7 @@ export const projects = [
     label: '(game)job_search.txt',
     icon: 'assets/file.png',
     categories: ['Web Dev', 'Creative'],
-    title: 'Thank You For Applying',
+    title: 'Thank You For Applying (game)',
     contentUrl: 'content/projects/project-1.txt',
     image: 'assets/project_1.png',
   },
@@ -36,16 +36,6 @@ export const projects = [
     image: 'assets/lang-talk.png',
   },
   {
-    id: 'project-2',
-    label: 'mood_notes.txt',
-    icon: 'assets/file.png',
-    categories: ['Web Dev'],
-    title: 'Mood Notes',
-    contentUrl: 'content/projects/project-2.txt',
-    image: 'assets/project_2.png',
-  },
-  {
-
     id: 'project-3',
     label: 'fractal_trees.txt',
     icon: 'assets/file.png',
@@ -53,6 +43,15 @@ export const projects = [
     title: 'Fractal Trees',
     contentUrl: 'content/projects/project-3.txt',
     image: 'assets/project_3.png',
+  },
+  {
+    id: 'project-2',
+    label: 'mood_notes.txt',
+    icon: 'assets/file.png',
+    categories: ['Web Dev'],
+    title: 'Mood Notes',
+    contentUrl: 'content/projects/project-2.txt',
+    image: 'assets/project_2.png',
   },
   {
     id: 'project-4',

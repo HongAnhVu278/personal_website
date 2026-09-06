@@ -1,6 +1,6 @@
 Thank you for applying (game)
 -------------------
-A little game I made about the job hunt. You play through the cycle of applying, waiting, and getting rejected.
+A little game I made about the job hunt. You cycle through applying, waiting, and getting rejected. There are two main meters, hope and savings, and the goal is to find a job before either of them runs out.
 -------------------
 Tech: Vanilla JavaScript, CSS, Phaser 3, and Tiled Map Editor
 Demo: https://honganhvu278.github.io/thank-you-for-applying-game/

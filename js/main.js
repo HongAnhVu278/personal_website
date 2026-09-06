@@ -92,6 +92,8 @@ const projectsWindow = createFolderWindow({
   icon: 'assets/folder_yellow.png',
   items: projects,
   filters: ['All', 'Web Dev', 'Creative', 'Data', 'Talks'],
+  layout: 'gallery',
+  wide: true,
   titlebarLink: {
     href: 'https://github.com/HongAnhVu278',
     svgHTML: githubSVG,

@@ -79,4 +79,25 @@
     font-size: 16px;
     padding: 2px 10px;
   }
+
+  /* projects gallery: single column on phones */
+  .window--wide {
+    width: 92vw;
+    max-width: none;
+  }
+
+  .window--wide .window__body--folder {
+    min-height: 260px;
+    max-height: 56vh;
+  }
+
+  .folder__main--gallery {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 12px;
+  }
+
+  .folder-item--card .folder-item__label {
+    font-size: var(--font-size-sm);
+  }
 }
